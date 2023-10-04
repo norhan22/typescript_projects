@@ -37,14 +37,19 @@ const arr1Ex: arr1 = [5, 'test']
 console.groupCollapsed('type (custom types)')
 console.log('type: arr1Ex', arr1Ex)
 console.groupEnd()
+
 /////////////////////////////////////////////////
 
-interface arr2 = {a}
-const arr2Ex: arr1 = [5, 'test']
+interface arr2 {
+    name: string;
+    age: number;
+}
+
+const arr2Ex: arr2 = {name: 'name', age: 5}
 
 // output
-console.groupCollapsed('type (custom types)')
-console.log('type: arr1Ex', arr1Ex)
+console.groupCollapsed('interface (custom types)')
+console.log('interface: arr2', arr2Ex)
 console.groupEnd()
 /////////////////////////////////////////////////
 
