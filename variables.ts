@@ -42,9 +42,10 @@ console.groupEnd()
 
 interface arr2 {
     name: string;
-    age: number;
+    age?: number;
 }
 
+// ? => optional
 const arr2Ex: arr2 = {name: 'name', age: 5}
 
 // output
@@ -52,6 +53,39 @@ console.groupCollapsed('interface (custom types)')
 console.log('interface: arr2', arr2Ex)
 console.groupEnd()
 /////////////////////////////////////////////////
+// Functions
+
+function sumVoid(int1: number, int2: number): void {
+    console.log('sumVoid', int1 + int2)
+}
+
+function sumReturn(int1: number, int2: number): number {
+    return int1 + int2
+}
+
+sumVoid(1, 2)
+console.log(sumReturn(1, 2))
+
+////////////////////////////////////////////////////////////
+
+class Person {
+    firstName: String;
+    public lastName: String;
+    protected birthdate: Date;
+    private age: Number;
+
+    constructor(firstNameParam: String, lastNameParam: string, ageParam: Number, birthdateParam?: Date) {
+        this.firstName = firstNameParam
+        this.lastName = lastNameParam
+        this.age = ageParam
+        this.birthdate = birthdateParam || null
+    }
+}
+
+let norhan = new Person('norhan', 'mohammed', 15)
+console.log(norhan.firstName) // undefined
+console.log(norhan.lastName) // Mohammed
+console.log(norhan.age) // not accessible
 
 
 
