@@ -25,7 +25,7 @@ const args = {a: 1, b: 2} as const;
 
 console.groupCollapsed('as const')
 console.log('args', args)
-args.a = 5
+// args.a = 5
 console.log('after: args.a', args.a)
 console.log('after args', args)
 console.groupEnd()
@@ -52,9 +52,10 @@ const arr2Ex: arr2 = {name: 'name', age: 5}
 console.groupCollapsed('interface (custom types)')
 console.log('interface: arr2', arr2Ex)
 console.groupEnd()
+
+
 /////////////////////////////////////////////////
 // Functions
-
 function sumVoid(int1: number, int2: number): void {
     console.log('sumVoid', int1 + int2)
 }
@@ -78,14 +79,14 @@ class Person {
         this.firstName = firstNameParam
         this.lastName = lastNameParam
         this.age = ageParam
-        this.birthdate = birthdateParam || null
+        this.birthdate = birthdateParam
     }
 }
 
 let norhan = new Person('norhan', 'mohammed', 15)
 console.log(norhan.firstName) // undefined
 console.log(norhan.lastName) // Mohammed
-console.log(norhan.age) // not accessible
+// console.log(norhan.age) // not accessible
 
 
 
